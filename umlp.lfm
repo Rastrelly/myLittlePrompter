@@ -1,0 +1,213 @@
+object Form1: TForm1
+  Left = 505
+  Height = 696
+  Top = 118
+  Width = 1158
+  Caption = 'My Little Prompter'
+  ClientHeight = 676
+  ClientWidth = 1158
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '2.2.6.0'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 653
+    Width = 1158
+    Panels = <    
+      item
+        Text = 'NOT ACTIVE'
+        Width = 500
+      end    
+      item
+        Width = 50
+      end>
+    SimplePanel = False
+  end
+  object Image1: TImage
+    Left = 0
+    Height = 621
+    Top = 32
+    Width = 1158
+    Align = alClient
+    OnClick = Image1Click
+    OnResize = Image1Resize
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 1158
+    ButtonHeight = 32
+    ButtonWidth = 32
+    Caption = 'ToolBar1'
+    ChildSizing.HorizontalSpacing = 1
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    Images = ImageList1
+    TabOrder = 1
+    object ToolButton1: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'Open'
+      ImageIndex = 0
+      MenuItem = MenuItem2
+    end
+    object ToolButton2: TToolButton
+      Left = 33
+      Top = 2
+      Caption = 'Re-Open'
+      ImageIndex = 1
+      MenuItem = MenuItem8
+    end
+    object ToolButton3: TToolButton
+      Left = 65
+      Top = 2
+      Caption = 'Settings'
+      ImageIndex = 2
+      MenuItem = MenuItem7
+    end
+    object ToolButton4: TToolButton
+      Left = 97
+      Top = 2
+      Caption = 'Start/Stop'
+      ImageIndex = 3
+      MenuItem = MenuItem5
+    end
+    object ToolButton5: TToolButton
+      Left = 129
+      Top = 2
+      Caption = 'Reset'
+      ImageIndex = 4
+      MenuItem = MenuItem6
+    end
+  end
+  object MainMenu1: TMainMenu
+    Images = ImageList1
+    Left = 80
+    Top = 72
+    object MenuItem1: TMenuItem
+      Caption = 'File'
+      object MenuItem2: TMenuItem
+        Caption = 'Open'
+        ImageIndex = 0
+        ShortCut = 16463
+        SubMenuImages = ImageList1
+        OnClick = MenuItem2Click
+      end
+      object MenuItem8: TMenuItem
+        Caption = 'Re-Open'
+        ImageIndex = 1
+        ShortCut = 49231
+        SubMenuImages = ImageList1
+        OnClick = MenuItem8Click
+      end
+      object MenuItem3: TMenuItem
+        Caption = 'Exit'
+        ShortCut = 16465
+        OnClick = MenuItem3Click
+      end
+    end
+    object MenuItem4: TMenuItem
+      Caption = 'Prompter'
+      OnClick = MenuItem4Click
+      object MenuItem5: TMenuItem
+        Caption = 'Start/Stop'
+        ImageIndex = 3
+        ShortCut = 16464
+        SubMenuImages = ImageList1
+        OnClick = MenuItem5Click
+      end
+      object MenuItem6: TMenuItem
+        Caption = 'Reset'
+        ImageIndex = 4
+        ShortCut = 16466
+        SubMenuImages = ImageList1
+        OnClick = MenuItem6Click
+      end
+      object MenuItem7: TMenuItem
+        Caption = 'Settings'
+        ImageIndex = 2
+        SubMenuImages = ImageList1
+        OnClick = MenuItem7Click
+      end
+    end
+  end
+  object FontDialog1: TFontDialog
+    MinFontSize = 0
+    MaxFontSize = 0
+    Left = 160
+    Top = 72
+  end
+  object OpenDialog1: TOpenDialog
+    Title = 'Open File'
+    Filter = 'Text file (*.txt)|*.txt|All Files (*.*)|*.*'
+    Left = 256
+    Top = 72
+  end
+  object ColorDialog1: TColorDialog
+    Color = clBlack
+    CustomColors.Strings = (
+      'ColorA=000000'
+      'ColorB=000080'
+      'ColorC=008000'
+      'ColorD=008080'
+      'ColorE=800000'
+      'ColorF=800080'
+      'ColorG=808000'
+      'ColorH=808080'
+      'ColorI=C0C0C0'
+      'ColorJ=0000FF'
+      'ColorK=00FF00'
+      'ColorL=00FFFF'
+      'ColorM=FF0000'
+      'ColorN=FF00FF'
+      'ColorO=FFFF00'
+      'ColorP=FFFFFF'
+      'ColorQ=C0DCC0'
+      'ColorR=F0CAA6'
+      'ColorS=F0FBFF'
+      'ColorT=A4A0A0'
+    )
+    Left = 360
+    Top = 72
+  end
+  object Timer1: TTimer
+    Enabled = False
+    OnTimer = Timer1Timer
+    Left = 456
+    Top = 72
+  end
+  object ImageList1: TImageList
+    Left = 536
+    Top = 72
+    Bitmap = {
+      4C7A050000001000000010000000F00200000000000078DAED96C16B134114C6
+      1F7890E2A182D453455A45844AAC82081EC2A05EA220D59C939B4210F6AEA739
+      D51E0A51A4124409F654080A8180D8220C786D09A2422EBD8B07FD139EF36676
+      92C9EC6C6636226835F091D9B7EF37EF9B9D7D932022A047DCF3114230CCCBDF
+      B7F446300040A8F1914A0CD339686E251A1B1EB62D959850CC368E44D7A06C65
+      7815AC59A2DA366BF13EEF19AF6EED185EE6C8B5E72A861F0C06D8ED7633A278
+      11BED56AA18A45C8C7ABEB7BEB086B3BF9BA5EA33CE1F28C3184C5D26496E6D6
+      F599CDCBFDD4F1492C89E697CF02F40234BF2EE27C13BB5812D23F8CF1F2FD54
+      6B8AF1BDB603193EB46692F6C7BC7C9C04389FBC7EFC55FDEFFF03D4FFB70F23
+      3C38A2C7670F15EBFF1757103667F577F3F1681CD3FF1B7775AEDB0714234FA1
+      FEA75A54D3E56F5CD4F742FD4F399EFE971E4586F7F5BF5B3FED7FF1F503CBF0
+      BEFE77D74FACEC21F6EE26D5E751FD4FFBA66B8DC69BB3C407FB5FE56831FEF1
+      11A41C37F1DF7576FC292A97CB486AB7DB51F9328FC97C610953D9B1603DA36A
+      B5AAE4C4F9049EEA63A552C146A331268AA5BCF70CEEF7FB2C4912E5B95EAF63
+      B3D914E61E8D2966D642B99EB573E391EAF57ABDA14F1A53CC7A9E7CC2B30BD6
+      A75C8F7F90FE2166FD949BB37F3CE2F9E7BE0F14B7F6DDB7FFAA7E80B765F8B1
+      F841EF3B579DCE0FBEB1B12B7FFB3F8F5D9BFBAFBE6FF1ABFB2B62E1FD79062F
+      E5D9E46869694F1E66ABF2FFC396CA37D7367F618FA19C8324A4C096C95F4856
+      7279591B652DB4E6E1D3F0A4A3AF4F9A79C80B2BCA1B518CBC4CCB1B2F26FF54
+      A2CF8E223CC9E4CFDFB954889F79721CE71F9E1EF233D72E47FB3FB67A02CF24
+      E748DCE4C3ADE5204F35534E48312988E5C96BCA2ACE28C43FFFD4E6564D7015
+      E29FBE7DC6DC9AB6E6E69A32FFFE9037D7FFDA39B2FB4DB0D617EEFDFD5BEE00
+      1690C8E1212096CA5B5F7A0BF907CAA1EF69F84922DE37AFA73E27799E2BA7EF
+      883A19BEA04F2F4F6B8F59BF8F272EDD1F1EB1873E9E15797F7CFECDB3FDDB7A
+      EA27EF025422
+    }
+  end
+end
