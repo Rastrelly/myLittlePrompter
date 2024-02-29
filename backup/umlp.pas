@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
-  ComCtrls, ExtCtrls, ScrollingText, DateUtils;
+  ComCtrls, ExtCtrls, ScrollingText, DateUtils, LConvEncoding;
 
 type
 
@@ -92,6 +92,7 @@ var
   tmr:TGlobTimer;
   pRun:TPrompterRunner;
   exitCall:boolean=false;
+  convtype:integer;
 
 implementation
 
@@ -157,6 +158,9 @@ begin
 
     cts:=imgBmp.Canvas.TextStyle;
     cts.Opaque:=false;
+    cts.Layout := tlCenter;
+    if filltoleft=0 then cts.Alignment:=taLeftJustify;
+    if filltoleft=1 then cts.Alignment:=taCenter;
     imgBmp.Canvas.TextStyle:=cts;
 
     with imgBmp.Canvas do
@@ -171,9 +175,14 @@ begin
       begin
         cLine:=textLines[i];
         cLineSize:=Length(cLine)*round(textFont.Size/3);
-        if filltoleft=1 then cx:=20;
-        if filltoleft=0 then cx:=Round((iw/2)-(cLineSize/2));
-        if (cy>-lh) and (cy<ih+lh) then TextOut(cx,cy,cLine);
+        //if filltoleft=1 then cx:=20 else cx:=Round((iw/2)-(cLineSize/2));
+        cy:=GetLineY(i);
+        if (cy>-lh) and (cy<ih+lh) then
+        begin
+          //Rectangle(20,cy,iw-20,cy+getLineHeight);
+          TextRect(rect(20,cy,iw-20,cy+getLineHeight),20,0,cLine,cts);
+          //TextOut(cx,cy,cLine);
+        end;
       end;
     end;
 
@@ -222,7 +231,7 @@ end;
 
 
 procedure TForm1.OpenFileToRead;
-var ctstr,tstr,ftstr,cbl:string;
+var ctstr,convstr,tstr,ftstr,cbl:string;
     i,cnt:integer;
     fl:TextFile;
 begin
@@ -239,8 +248,19 @@ begin
     while not eof(fl) do
     begin
       ReadLn(fl,ctstr);
-      tstr:=tstr+ctstr+#13;
+      convstr:='';
+      if (convtype=0) then
+      convstr := ctstr;                //UTF-8
+      if (convtype=1) then
+      convstr := CP1252ToUTF8(ctstr);  // Use fixed codepage 1252
+      if (convtype=2) then
+      convstr := KOI8RToUTF8(ctstr);   // KOI8R
+      if (convtype=3) then
+      convstr := ANSIToUTF8(ctstr);    // ANSI
+      tstr:=tstr+convstr+#13;
     end;
+
+    SetCodePage(RawByteString(tstr), 1252, true);
 
     ftstr:='';
     for i:=1 to length(tstr)-1 do
@@ -353,6 +373,7 @@ begin
   WriteLn(fl,inttostr(pll));
   WriteLn(fl,inttostr(filltoleft));
   WriteLn(fl,inttostr(lineMargin));
+  WriteLn(fl,inttostr(convtype));
   CloseFile(fl);
 end;
 
@@ -386,6 +407,9 @@ begin
   lineMargin:=strtoint(tstr);
   Form2.Edit2.Text:=inttostr(lineMargin);
   if filltoleft=1 then Form2.CheckBox1.Checked:=true else Form2.CheckBox1.Checked:=false;
+  ReadLn(fl,tstr);
+  convtype:=strtoint(tstr);
+  Form2.ComboBox1.ItemIndex:=convtype;
   CloseFile(fl);
 end;
 

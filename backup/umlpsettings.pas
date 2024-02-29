@@ -16,10 +16,12 @@ type
     Button2: TButton;
     Button3: TButton;
     CheckBox1: TCheckBox;
+    ComboBox1: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
     Label1: TLabel;
+    Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -28,6 +30,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure CheckBox1Change(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
     procedure Edit2Change(Sender: TObject);
     procedure Edit3Change(Sender: TObject);
@@ -70,6 +73,11 @@ begin
   if CheckBox1.Checked then filltoleft:=1 else filltoleft:=0;
 end;
 
+procedure TForm2.ComboBox1Change(Sender: TObject);
+begin
+  convtype:=ComboBox1.ItemIndex;
+end;
+
 procedure TForm2.Edit1Change(Sender: TObject);
 begin
   TryStrToInt(edit1.Text,pll);
@@ -82,7 +90,7 @@ end;
 
 procedure TForm2.Edit3Change(Sender: TObject);
 begin
-  TryStrToInt(edit2.Text,scrollSpeed);
+  TryStrToInt(edit3.Text,scrollSpeed);
 end;
 
 end.
