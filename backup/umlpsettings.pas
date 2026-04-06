@@ -54,18 +54,23 @@ begin
   if form1.FontDialog1.Execute then
   begin
     Form1.SetSBFont;
+    Form1.MenuItem8.Click;
   end;
 end;
 
 procedure TForm2.Button2Click(Sender: TObject);
 begin
   if Form1.ColorDialog1.Execute then
-  bgColor:=Form1.ColorDialog1.Color;
+  begin
+    bgColor:=Form1.ColorDialog1.Color;
+    Form1.MenuItem8.Click;
+  end;
 end;
 
 procedure TForm2.Button3Click(Sender: TObject);
 begin
   Form1.SaveSettings;
+  Form1.ToolButton2.Click;
 end;
 
 procedure TForm2.CheckBox1Change(Sender: TObject);
@@ -76,21 +81,28 @@ end;
 procedure TForm2.ComboBox1Change(Sender: TObject);
 begin
   convtype:=ComboBox1.ItemIndex;
+  if (fileexists(Form1.OpenDialog1.FileName)) then
+  Form1.MenuItem8.Click;
 end;
 
 procedure TForm2.Edit1Change(Sender: TObject);
 begin
   TryStrToInt(edit1.Text,pll);
+  if (fileexists(Form1.OpenDialog1.FileName)) then
+  Form1.MenuItem8.Click;
 end;
 
 procedure TForm2.Edit2Change(Sender: TObject);
 begin
   TryStrToInt(edit2.Text,lineMargin);
+  if (fileexists(Form1.OpenDialog1.FileName)) then
+  Form1.MenuItem8.Click;
 end;
 
 procedure TForm2.Edit3Change(Sender: TObject);
 begin
   TryStrToInt(edit3.Text,scrollSpeed);
+  form1.lblScrollSpeed.Caption:=scrollSpeed;
 end;
 
 end.

@@ -12,7 +12,7 @@
         <WindowIndex Value="-1"/>
         <TopLine Value="-1"/>
         <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="35"/>
       </Unit>
       <Unit>
         <Filename Value="umlp.pas"/>
@@ -20,10 +20,9 @@
         <ComponentName Value="Form1"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <IsVisibleTab Value="True"/>
-        <TopLine Value="157"/>
-        <CursorPos X="62" Y="169"/>
-        <UsageCount Value="33"/>
+        <TopLine Value="6"/>
+        <CursorPos X="20" Y="18"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -33,143 +32,163 @@
         <ComponentName Value="Form2"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="59"/>
-        <CursorPos X="62" Y="69"/>
-        <UsageCount Value="33"/>
+        <EditorIndex Value="3"/>
+        <CursorPos X="17" Y="83"/>
+        <UsageCount Value="35"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="C:\lazarus\lcl\graphics.pp"/>
         <UnitName Value="Graphics"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="2581"/>
-        <CursorPos X="22" Y="2570"/>
-        <UsageCount Value="15"/>
+        <EditorIndex Value="2"/>
+        <TopLine Value="2570"/>
+        <CursorPos X="13" Y="2570"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
+      </Unit>
+      <Unit>
+        <Filename Value="C:\lazarus\fpc\3.2.2\source\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="714"/>
+        <CursorPos X="27" Y="725"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="utexted.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Form3"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="uTextEd"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <TopLine Value="21"/>
+        <CursorPos X="6" Y="57"/>
+        <UsageCount Value="22"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
     </Units>
     <JumpHistory HistoryIndex="29">
       <Position>
-        <Filename Value="umlpsettings.pas"/>
-        <Caret Line="80" Column="36" TopLine="48"/>
+        <Filename Value="umlp.pas"/>
+        <Caret Line="364" Column="17" TopLine="352"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="111" Column="15" TopLine="89"/>
+        <Caret Line="400" Column="27" TopLine="395"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="110" Column="63" TopLine="87"/>
+        <Caret Line="319" Column="34" TopLine="315"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="99" Column="7" TopLine="91"/>
+        <Caret Line="369" Column="13" TopLine="366"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="156" Column="30" TopLine="134"/>
+        <Caret Line="398" Column="42" TopLine="376"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="151" Column="45" TopLine="138"/>
+        <Caret Line="215" Column="28" TopLine="191"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="83" Column="30" TopLine="71"/>
+        <Caret Line="29" Column="14" TopLine="11"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="125" Column="83" TopLine="101"/>
+        <Caret Line="46" Column="24" TopLine="17"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="126" Column="83" TopLine="102"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="127" Column="83" TopLine="103"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="128" Column="83" TopLine="104"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="129" Column="83" TopLine="105"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="191" Column="3" TopLine="189"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="192" Column="3" TopLine="190"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="221" Column="3" TopLine="190"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="222" Column="3" TopLine="191"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="132" Column="83" TopLine="102"/>
-      </Position>
-      <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="268" Column="10" TopLine="264"/>
+        <Caret Line="210" Column="27" TopLine="180"/>
       </Position>
       <Position>
         <Filename Value="umlpsettings.pas"/>
-        <Caret Line="15" Column="32"/>
+        <Caret Line="74" Column="13" TopLine="69"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="247" Column="143" TopLine="233"/>
+        <Caret Line="16" Column="16" TopLine="10"/>
       </Position>
       <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="208" Column="9" TopLine="189"/>
+        <Filename Value="utexted.pas"/>
+        <Caret Line="8" Column="22"/>
+      </Position>
+      <Position>
+        <Filename Value="utexted.pas"/>
+        <Caret Line="54" Column="21" TopLine="34"/>
+      </Position>
+      <Position>
+        <Filename Value="utexted.pas"/>
+        <Caret Line="63" Column="22" TopLine="34"/>
       </Position>
       <Position>
         <Filename Value="umlpsettings.pas"/>
-        <Caret Line="14" Column="32"/>
+        <Caret Line="75" Column="24" TopLine="69"/>
       </Position>
       <Position>
         <Filename Value="umlpsettings.pas"/>
-        <Caret Line="63" Column="28" TopLine="54"/>
+        <Caret Line="84" Column="18" TopLine="69"/>
       </Position>
       <Position>
         <Filename Value="umlpsettings.pas"/>
-        <Caret Line="78" Column="32" TopLine="54"/>
+        <Caret Line="90" Column="18" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="96" Column="18" TopLine="69"/>
+      </Position>
+      <Position>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="57" Column="20" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="66" Column="20" TopLine="38"/>
+      </Position>
+      <Position>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="84" Column="18" TopLine="54"/>
+      </Position>
+      <Position>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="90" Column="18" TopLine="60"/>
+      </Position>
+      <Position>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="96" Column="18" TopLine="66"/>
+      </Position>
+      <Position>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="51" Column="29"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="247" Column="14" TopLine="225"/>
+        <Caret Line="29" Column="30" TopLine="451"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="9" Column="49"/>
+        <Caret Line="221" Column="3" TopLine="219"/>
       </Position>
       <Position>
         <Filename Value="umlp.pas"/>
-        <Caret Line="248" Column="20" TopLine="228"/>
+        <Caret Line="330" Column="10" TopLine="321"/>
       </Position>
       <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="403" Column="22" TopLine="380"/>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="85" Column="25" TopLine="72"/>
       </Position>
       <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="162" Column="50" TopLine="150"/>
+        <Filename Value="umlpsettings.pas"/>
+        <Caret Line="105" Column="44" TopLine="72"/>
       </Position>
       <Position>
-        <Filename Value="umlp.pas"/>
-        <Caret Line="181" Column="58" TopLine="162"/>
+        <Filename Value="utexted.pas"/>
+        <Caret Line="56" Column="53"/>
       </Position>
     </JumpHistory>
     <RunParams>

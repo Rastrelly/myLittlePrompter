@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
-  ComCtrls, ExtCtrls, ScrollingText, DateUtils, LConvEncoding;
+  ComCtrls, ExtCtrls, DateUtils, LConvEncoding;
 
 type
 
@@ -17,6 +17,7 @@ type
     FontDialog1: TFontDialog;
     Image1: TImage;
     ImageList1: TImageList;
+    Label1: TLabel;
     MainMenu1: TMainMenu;
     MenuItem1: TMenuItem;
     MenuItem2: TMenuItem;
@@ -26,16 +27,24 @@ type
     MenuItem6: TMenuItem;
     MenuItem7: TMenuItem;
     MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
     OpenDialog1: TOpenDialog;
     StatusBar1: TStatusBar;
     Timer1: TTimer;
     ToolBar1: TToolBar;
     ToolButton1: TToolButton;
+    ToolButton10: TToolButton;
+    ToolButton11: TToolButton;
     ToolButton2: TToolButton;
     ToolButton3: TToolButton;
     ToolButton4: TToolButton;
     ToolButton5: TToolButton;
+    ToolButton6: TToolButton;
+    ToolButton7: TToolButton;
+    ToolButton8: TToolButton;
+    ToolButton9: TToolButton;
     procedure MenuItem8Click(Sender: TObject);
+    procedure MenuItem9Click(Sender: TObject);
     procedure MoveText;
     procedure RenderText;
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
@@ -53,6 +62,12 @@ type
     procedure MenuItem7Click(Sender: TObject);
     procedure SetPrompterSpeed(spd:integer);
     procedure Timer1Timer(Sender: TObject);
+    procedure ToolButton10Click(Sender: TObject);
+    procedure ToolButton11Click(Sender: TObject);
+    procedure ToolButton1Click(Sender: TObject);
+    procedure ToolButton2Click(Sender: TObject);
+    procedure ToolButton8Click(Sender: TObject);
+    procedure ToolButton9Click(Sender: TObject);
     procedure UpdateScrollerActiveState;
     procedure SetSBFont;
     procedure SaveSettings;
@@ -98,7 +113,7 @@ implementation
 
 {$R *.lfm}
 
-uses umlpsettings;
+uses umlpsettings,utexted;
 
 { TForm1 }
 
@@ -159,8 +174,8 @@ begin
     cts:=imgBmp.Canvas.TextStyle;
     cts.Opaque:=false;
     cts.Layout := tlCenter;
-    if filltoleft=0 then cts.Alignment:=taLeftJustify;
-    if filltoleft=1 then cts.Alignment:=taCenter;
+    if filltoleft=0 then cts.Alignment:=taCenter;
+    if filltoleft=1 then cts.Alignment:=taLeftJustify;
     imgBmp.Canvas.TextStyle:=cts;
 
     with imgBmp.Canvas do
@@ -200,6 +215,11 @@ begin
   MessageDlg('Error: no file to re-open','File to-re-open does not exist. Select a file via Open menu item.',mtError,[mbOK],0);
 end;
 
+procedure TForm1.MenuItem9Click(Sender: TObject);
+begin
+  Form3.Show;
+end;
+
 procedure TForm1.MenuItem4Click(Sender: TObject);
 begin
 
@@ -234,6 +254,7 @@ procedure TForm1.OpenFileToRead;
 var ctstr,convstr,tstr,ftstr,cbl:string;
     i,cnt:integer;
     fl:TextFile;
+    scp: TSystemCodePage;
 begin
   if fileexists(OpenDialog1.FileName) then
   begin
@@ -267,7 +288,7 @@ begin
     begin
       ftstr:=ftstr+tstr[i];
       inc(cnt);
-      if ((cnt>=pll) and ((tstr[i]=' ') or (tstr[i]=#10) or (tstr[i]=#13))) or ((tstr[i]=#10) or (tstr[i]=#13)) or (i=length(tstr)-1) then
+      if ((cnt>=pll) and ((tstr[i]='-') or (tstr[i]=' ') or (tstr[i]=#10) or (tstr[i]=#13))) or ((tstr[i]=#10) or (tstr[i]=#13)) or (i=length(tstr)-1) then
       begin
         if (filltoleft=1)then while (length(ftstr)<pll) do ftstr:=ftstr+#9;
         textLines.Add(ftstr);
@@ -346,6 +367,46 @@ procedure TForm1.Timer1Timer(Sender: TObject);
 begin
   Timer1.Enabled:=false;
   pRun.DoRun;
+end;
+
+procedure TForm1.ToolButton10Click(Sender: TObject);
+begin
+  scrollSpeed:=scrollSpeed+10;
+  form2.Edit3.Text:=inttostr(scrollSpeed);
+  Form2.Button3.Click;
+end;
+
+procedure TForm1.ToolButton11Click(Sender: TObject);
+begin
+  scrollSpeed:=scrollSpeed-1;
+  if (scrollSpeed<0) then scrollSpeed:=0;
+  form2.Edit3.Text:=inttostr(scrollSpeed);
+  Form2.Button3.Click;
+end;
+
+procedure TForm1.ToolButton1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.ToolButton2Click(Sender: TObject);
+begin
+
+end;
+
+procedure TForm1.ToolButton8Click(Sender: TObject);
+begin
+  scrollSpeed:=scrollSpeed-10;
+  if (scrollSpeed<0) then scrollSpeed:=0;
+  form2.Edit3.Text:=inttostr(scrollSpeed);
+  Form2.Button3.Click;
+end;
+
+procedure TForm1.ToolButton9Click(Sender: TObject);
+begin
+  scrollSpeed:=scrollSpeed+1;
+  form2.Edit3.Text:=inttostr(scrollSpeed);
+  Form2.Button3.Click;
 end;
 
 procedure TForm1.UpdateScrollerActiveState;
